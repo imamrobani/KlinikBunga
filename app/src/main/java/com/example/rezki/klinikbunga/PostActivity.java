@@ -84,9 +84,14 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
                                 newPost.child("image").setValue(downloadUrl).toString();
 
                     progressdialog.dismiss();
+                    Toast.makeText(PostActivity.this, "Upload Succes!", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(PostActivity.this, MainActivity.class));
                 }
             });
+        }else{
+            //test
+            progressdialog.dismiss();
+            Toast.makeText(PostActivity.this, "Failed Upload", Toast.LENGTH_LONG).show();
         }
     }
 
